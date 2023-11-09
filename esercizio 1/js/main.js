@@ -7,7 +7,7 @@ const emailList = [
   "prova@gmail.com",
   "luca@gmail.com",
   "boolean@libero.it",
-  "mail.gmail.com",
+  "mail@gmail.com",
   "pizza@libero.it",
 ];
 
@@ -24,6 +24,9 @@ for (let i = 0; i < emailList.length; i++) {
   } else if (userEmail !== emailList[i] && i === emailList.length - 1) {
     console.log("Email Errata");
     alert("Email Errata!");
+    alert(
+      "Le mail corrette sono, in ordine: - ciao@gmail.com - prova@gmail.com - luca@gmail.com - boolean@libero.it - mail@gmail.com - pizza@libero.it"
+    );
     break;
   }
 }
