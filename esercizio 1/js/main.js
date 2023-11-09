@@ -19,9 +19,11 @@ console.log(emailList);
 for (let i = 0; i <= emailList.length; i++) {
   if (userEmail === emailList[i]) {
     console.log("Email Corretta");
+    alert("Email Corretta!");
     break;
   } else if (userEmail !== emailList[i] && i === emailList.length) {
     console.log("Email Errata");
+    alert("Email Errata!");
     break;
   }
 }
