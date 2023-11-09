@@ -16,11 +16,11 @@ console.log({ userEmail });
 console.log(emailList);
 
 //! ciclo for
-for (let i = 0; i < emailList.length; i++) {
+for (let i = 0; i <= emailList.length; i++) {
   if (userEmail === emailList[i]) {
     console.log("Email Corretta");
     break;
-  } else if (userEmail !== emailList[i] && i === emailList.length - 1) {
+  } else if (userEmail !== emailList[i] && i === emailList.length) {
     console.log("Email Errata");
     break;
   }
