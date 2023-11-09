@@ -1,6 +1,15 @@
-# Mail
+# Mail e Dadi
 
-_HTML+css(bootstrap)+js_
+Asseganzione di due esercizi con l' introduzione degli array.
+
+_HTML+js_
+
+## Indice
+
+- [Mail](#mail)
+- [Dadi](#dadi)
+
+# Mail
 
 Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
@@ -8,17 +17,17 @@ stampa un messaggio appropriato sull’esito del controllo.
 
 ## Indice
 
-- [Scomposizone del problema](#scomposizione-del-problema)
-- [Soluzione](#soluzione)
+- [Scomposizione del problema mail ](#scomposizione-del-problema-mail)
+- [Soluzione mail](#soluzione-mail)
 
-### Scomposizione del problema
+### Scomposizione del problema-mail
 
 1. Richiedere l'email dell'utente e salvarla in una variabile (tramite `prompt`);
 2. Creare un `array` di mail fittizzie;
 3. Controllare se l'email è presente o meno nell'array (tramite ciclo `for`)
 4. Stampare un messaggio di conferma o di negazione a seconda del caso (tramete `if`)
 
-### Soluzione
+### Soluzione-mail
 
 **_Richiedere l'email dell'utente e salvarla in una variabile (tramite `prompt`);_**
 
@@ -76,19 +85,77 @@ NB i parte da 0 e arriva fino a 5 perchè il primo elemnto dell' `array` è in p
 
 # Dadi
 
-_HTML+css(bootstrap)+js_
-
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 ## Indice
 
-- [Scomposizone del problema](#scomposizione-del-problema)
-- [Soluzione](#soluzione)
+- [Scomposizione del problema dadi ](#scomposizione-del-problema-dadi)
+- [Soluzione dadi-base](#soluzione-dadi-base)
+- [Soluzione dadi-array](#soluzione-dadi-array)
 
-### Scomposizione del problema
+### Scomposizione del problema-dadi
 
 1. Genero numero random per computer
 2. Genero numero random per utente
 3. Verifico quale dei due punteggi è più alto (tramite `if`)
 4. Stampare il vincitore (tramite `alert`)
+
+### Soluzione-dadi base
+
+> **_Genero numero random per computer_**
+>
+> > **_Genero numero random per utente_**
+
+```js
+const userNumber = Math.floor(Math.random() * 6) + 1;
+const computerNumber = Math.floor(Math.random() * 6) + 1;
+```
+
+> **_Verifico quale dei due punteggi è più alto (tramite `if`)_**
+>
+> > **_Stampare il vincitore (tramite `alert`)_**
+
+```js
+if (userNumber > computerNumber) {
+  console.log("Hai vinto!");
+} else if (userNumber < computerNumber) {
+  console.log("Hai perso!");
+} else {
+  console.log("Hai pareggiato!");
+}
+```
+
+- Nella prima condizione controllo se il numero utente è maggiore di quello del computer
+- Nella seconda se il numero utente è minore di quello del computer
+- `else` serve nel caso ci sia un pareggio
+- in tutti e tre i casi stampo il messaggio di output
+
+  NB altri `console.log` e eventuali `alert` sono stati rimossi per avere una miglire lettura dell' esempio
+
+### Soluzione-dadi array
+
+In questa soluzione il processo logico è identico ma vado a creare due array che contengono 6 numeri (ogni numero è un numero random tra 1 e 6)
+
+Confronto, come fatto prima, due elementi dell' array random `userNumber[randomNumber] `
+
+```js
+const userNumber = [];
+const computerNumber = [];
+
+const randomNumber = Math.floor(Math.random() * 6);
+
+//! ciclo for che genera array casuali
+for (let i = 0; i < 6; i++) {
+  userNumber.push(Math.floor(Math.random() * 6) + 1);
+  computerNumber.push(Math.floor(Math.random() * 6) + 1);
+}
+
+if (userNumber[randomNumber] > computerNumber[randomNumber]) {
+  console.log("Hai vinto!");
+} else if (userNumber[randomNumber] < computerNumber[randomNumber]) {
+  console.log("Hai perso!");
+} else {
+  console.log("Hai pareggiato!");
+}
+```
