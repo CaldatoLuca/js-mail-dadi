@@ -10,5 +10,11 @@ console.log(emailList);
 
 //! ciclo for
 for (let i = 0; i < emailList.length; i++) {
-  console.log(emailList[i]);
+  if (userEmail === emailList[i]) {
+    console.log("Email Corretta");
+    break;
+  } else {
+    console.log("Email Errata");
+    break;
+  }
 }
